@@ -9,6 +9,7 @@ import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 const app = express();
 
+// 미들웨어 사용
 app.use(cookieParser());
 app.use(bodyParser.json()); // json 타입 지정
 app.use(bodyParser.urlencoded({
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(helmet());
 app.use(morgan("dev"));
 
+// 라우터 지정
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
