@@ -9,6 +9,10 @@ import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 const app = express();
 
+// view 엔진으로 pug 설정
+// 기본적으로 /views 경로를 사용함
+app.set("view engine", "pug");
+
 // 미들웨어 사용
 app.use(cookieParser());
 app.use(bodyParser.json()); // json 타입 지정
