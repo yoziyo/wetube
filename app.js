@@ -28,8 +28,8 @@ app.use(localsMiddleware);
 app.set("view engine", "pug");
 
 // 라우터 지정
-app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
+app.use(routes.home, globalRouter);
 app.use(routes.videos, videoRouter);
 
 export default app;
