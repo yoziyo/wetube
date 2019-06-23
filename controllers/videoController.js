@@ -12,7 +12,8 @@ export const search = (req, res) => {
 
   res.render("search", {
     pageTitle: "Search",
-    searchingBy
+    searchingBy,
+    videos
   });
 };
 export const upload = (req, res) =>
