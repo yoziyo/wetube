@@ -27,6 +27,8 @@ app.use(localsMiddleware);
 // 기본적으로 /views 경로를 사용함
 app.set("view engine", "pug");
 
+app.use("/uploads", express.static("uploads"));
+
 // 라우터 지정
 app.use(routes.users, userRouter);
 app.use(routes.home, globalRouter);

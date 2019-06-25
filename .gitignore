@@ -77,4 +77,4 @@ typings/
 package-lock.json
 
 # upload folder
-videos/
+uploads/
