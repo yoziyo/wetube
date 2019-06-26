@@ -1,5 +1,3 @@
-import app from "./app";
-
 // Global
 const HOME = "/";
 const JOIN = "/join";
