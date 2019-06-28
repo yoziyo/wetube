@@ -29,6 +29,7 @@ app.use(localsMiddleware);
 app.set("view engine", "pug");
 
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("static"));
 
 // 라우터 지정
 app.use(routes.users, userRouter);
