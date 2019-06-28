@@ -23,8 +23,7 @@
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js --delay 1",
-    "dev:assets": "webpack --mode development",
-    "build:assets": "webpack --mode production"
+    "dev:assets": "webpack"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
