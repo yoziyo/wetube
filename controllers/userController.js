@@ -28,7 +28,6 @@ export const postJoin = async (req, res, next) => {
       console.log(error);
       res.redirect(routes.home);
     }
-    // TODO : Log User In
   }
 };
 
