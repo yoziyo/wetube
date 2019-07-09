@@ -4,6 +4,7 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser"; // 이후 세션 데이터 저장등 쿠키 에 사용
 import bodyParser from "body-parser"; // 넘어온 데이터 처리용
 import passport from "passport";
+import session from "express-session";
 import { localsMiddleware } from "./middlewares";
 import routes from "./routes";
 import userRouter from "./routers/userRouter";
@@ -25,6 +26,13 @@ app.use(
 );
 app.use(morgan("dev"));
 
+app.use(
+  session({
+    secret: process.env.COOKIE_SECRET,
+    resave: true,
+    saveUninitialized: false
+  })
+);
 // 상단 cookie parser 로부터 내려와서, initialize되고, passport가 스스로 쿠키를 보고 해당 사용자 찾아줌
 // 그 데이터가 req로 localsMiddleware로 들어감.
 app.use(passport.initialize());

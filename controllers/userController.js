@@ -5,6 +5,10 @@ import User from "../models/User";
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
 };
+
+export const getLogin = (req, res) =>
+  res.render("login", { pageTitle: "Login" });
+
 export const postJoin = async (req, res, next) => {
   const {
     body: { name, email, password, password2 }
@@ -31,9 +35,8 @@ export const postJoin = async (req, res, next) => {
   }
 };
 
-export const getLogin = (req, res) =>
-  res.render("login", { pageTitle: "Login" });
-
+// passport auth 는 설정된 username (여기서 email) 과 패스워드로 로그인 처리를 해줌
+// postJoin -> postLogin은 미들웨어로 넘어오기 때문에 req.user 의 email, password등이 같이 넘어와서 바로 자동 체크
 export const postLogin = passport.authenticate("local", {
   failureRedirect: routes.login,
   successRedirect: routes.home
