@@ -15,7 +15,7 @@ passport.use(
     {
       clientID: process.env.GH_ID,
       clientSecret: process.env.GH_SECRET,
-      callbackURL: `https://warm-moth-12.localtunnel.me${routes.githubCallback}`
+      callbackURL: `http://localhost:4000${routes.githubCallback}`
     },
     githubLoginCallback
   )
