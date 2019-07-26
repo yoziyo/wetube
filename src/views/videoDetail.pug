@@ -35,6 +35,7 @@ block content
                 each comment in video.comments.reverse()
                     li
                         span=comment.text
-                        span.video__comments-delete=X
-                            input(type="hidden", value=comment.id)
-                            | x
+                        if loggedUser && video.creator.id === loggedUser.id
+                            span.video__comments-delete=X
+                                input(type="hidden", value=comment.id)
+                                | x
