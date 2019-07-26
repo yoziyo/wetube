@@ -6,6 +6,7 @@ import bodyParser from "body-parser"; // 넘어온 데이터 처리용
 import passport from "passport";
 import mongoose from "mongoose";
 import session from "express-session";
+import path from "path";
 import MongoStore from "connect-mongo";
 import { localsMiddleware } from "./middlewares";
 import routes from "./routes";
@@ -49,9 +50,10 @@ app.use(localsMiddleware);
 // view 엔진으로 pug 설정
 // 기본적으로 /views 경로를 사용함
 app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 
 app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static("static"));
+app.use("/static", express.static(path.join(__dirname, "static")));
 
 // 라우터 지정
 app.use(routes.users, userRouter);
