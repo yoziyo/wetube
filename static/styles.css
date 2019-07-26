@@ -588,9 +588,16 @@ input[type="submit"] {
                 border-radius: 20px;
         -webkit-border-bottom-left-radius: 0px;
            -moz-border-radius-bottomleft: 0px;
-                border-bottom-left-radius: 0px; }
+                border-bottom-left-radius: 0px;
+        position: relative; }
         .video-detail__container .video__comments .video__comments-list li:not(:last-child) {
           margin-bottom: 15px; }
+        .video-detail__container .video__comments .video__comments-list li .video__comments-delete {
+          position: absolute;
+          cursor: pointer;
+          top: 5px;
+          right: 10px;
+          font-size: 12; }
 
 .user-profile {
   width: 100%;

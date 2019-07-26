@@ -53,8 +53,16 @@
         padding: 15px;
         border-radius: 20px;
         border-bottom-left-radius: 0px;
+        position: relative;
         &:not(:last-child) {
           margin-bottom: 15px;
+        }
+        .video__comments-delete {
+          position: absolute;
+          cursor: pointer;
+          top: 5px;
+          right: 10px;
+          font-size: 12;
         }
       }
     }

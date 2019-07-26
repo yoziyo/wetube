@@ -144,6 +144,28 @@ export const postAddComment = async (req, res) => {
 
     video.comments.push(newComment.id);
     video.save();
+    res.send(newComment.id);
+  } catch (error) {
+    res.status(400);
+  } finally {
+    res.end();
+  }
+};
+
+// remove comment
+export const postDeleteComment = async (req, res) => {
+  const {
+    params: { id },
+    user
+  } = req;
+
+  try {
+    const comment = await Comment.findById(id).populate("creator");
+    if (!comment || user.email !== comment.creator.email) {
+      throw Error;
+    }
+
+    comment.remove();
   } catch (error) {
     res.status(400);
   } finally {
